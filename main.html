@@ -9,7 +9,20 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
+			//Write your code 
+			let firstHeighest = arr[0]
+			let secondHeighest = arr[1]
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i]>firstHeighest) {
+					firstHeighest=arr[i]
+				}
+			}
+			for (let i = 0; i < arr.length; i++) {
+				if (secondHeighest<arr[i] && arr[i]<firstHeighest) {
+					secondHeighest=arr[i]
+				}
+			}
+			return secondHeighest
 			
 		}
 
@@ -19,7 +32,7 @@
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
 			}
-			alert(secondHighest(arr));
+			alert(secondHighest(arr)); 
 		}
 		Main();
 	</script>
