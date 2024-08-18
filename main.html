@@ -10,18 +10,17 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code 
-			let firstHeighest = arr[0]
-			let secondHeighest = arr[1]
-			for (let i = 0; i < arr.length; i++) {
-				if (arr[i]>firstHeighest) {
-					firstHeighest=arr[i]
-				}
-			}
-			for (let i = 0; i < arr.length; i++) {
-				if (secondHeighest<arr[i] && arr[i]<firstHeighest) {
-					secondHeighest=arr[i]
-				}
-			}
+			let firstHeighest = -Infinity;
+  let secondHeighest = -Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > firstHeighest) {
+      secondHeighest = firstHeighest;
+      firstHeighest = arr[i];
+    } else if (arr[i] > secondHeighest && arr[i] !== firstHeighest) {
+      secondHeighest = arr[i];
+    }
+  }
 			return secondHeighest
 			
 		}
